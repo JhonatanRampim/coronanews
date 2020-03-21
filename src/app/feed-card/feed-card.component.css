@@ -1,0 +1,31 @@
+body, header{
+    padding: 0;
+    margin: 0;
+    color: #F2E8DF;
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .example-card {
+    max-width: 400px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+
+  /* Color Theme Swatches in Hex */
+-the-concept-of-the-epidemic-of-the-virus-in-China-1-hex { color: #A6242F; }
+-the-concept-of-the-epidemic-of-the-virus-in-China-2-hex { color: #F2E8DF; }
+-the-concept-of-the-epidemic-of-the-virus-in-China-3-hex { color: #BFA18F; }
+-the-concept-of-the-epidemic-of-the-virus-in-China-4-hex { color: #735E5A; }
+-the-concept-of-the-epidemic-of-the-virus-in-China-5-hex { color: #D92323; }
+
