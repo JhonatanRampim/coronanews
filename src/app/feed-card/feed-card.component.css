@@ -33,6 +33,17 @@ body, header{
     max-width: 100%;
   }
 
+  .card-body{
+    text-align: justify;
+  }
+
+  .card-header{
+    background-color: #D92323;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+  }
+
   /* Color Theme Swatches in Hex */
 -the-concept-of-the-epidemic-of-the-virus-in-China-1-hex { color: #A6242F; }
 -the-concept-of-the-epidemic-of-the-virus-in-China-2-hex { color: #F2E8DF; }

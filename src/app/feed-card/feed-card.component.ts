@@ -17,17 +17,17 @@ export class FeedCardComponent implements OnInit {
 
   async ngOnInit(){
     this.news.push('https://www.noticiasdeararas.com.br/feed/','https://www.jornalcidade.net/rss','https://conchalemnoticias.com.br/rss', 'https://opopularmm.com.br/rss')
-    await this.news.map(url => {
-      this.refreshFeed(url)
+    this.news.map(async url => {
+      await this.refreshFeed(url)
     });
-    
   }
 
  private refreshFeed(url):any {
     this.feedService.getFeedContent(url)
       .subscribe(async res => {
+        this.source.push(res.items)
+        console.log(this.source);
         res.items.map(feed => {
-        console.log(feed.description.replace());
         this.feeds.push(feed);
       }); 
     });

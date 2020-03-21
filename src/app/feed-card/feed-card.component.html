@@ -9,8 +9,8 @@
 <div class="container-fluid col-sm" style="float:left;background-color:#F2E8DF;">
     <div class="row">
         <div class="card example-card" style="width: 18rem;" *ngFor="let feed of feeds">
-            <img src="..." class="card-img-top" alt="...">
             <div class="card-header">{{feed.title}}</div>
+            <img src="..." class="card-img-top" alt="...">
             <div [innerHTML]="feed.description" class="card-body"></div>
             <div class="card-footer"><a href="{{feed.guid}}">{{feed.guid}}</a></div>
           </div>
