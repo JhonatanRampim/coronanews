@@ -8,21 +8,28 @@ import { FeedService } from '../services/feed.service';
   styleUrls: ['./feed-card.component.css']
 })
 export class FeedCardComponent implements OnInit {
-    private feedUrl: string = 'https://www.noticiasdeararas.com.br/feed/';
-    public feeds: any;
-  constructor(
+    feeds: any[] = [];
+    news: String[] = [];
+    source: any[] = [];
+    constructor(
     private feedService: FeedService
   ) { }
 
-  ngOnInit(){
-   this.refreshFeed()
+  async ngOnInit(){
+    this.news.push('https://www.noticiasdeararas.com.br/feed/','https://www.jornalcidade.net/rss','https://conchalemnoticias.com.br/rss', 'https://opopularmm.com.br/rss')
+    await this.news.map(url => {
+      this.refreshFeed(url)
+    });
+    
   }
 
- private refreshFeed():any {
-    this.feedService.getFeedContent(this.feedUrl)
-      .subscribe(
-          feed => this.feeds = feed.items,
-          error => console.log(error));
+ private refreshFeed(url):any {
+    this.feedService.getFeedContent(url)
+      .subscribe(async res => {
+        res.items.map(feed => {
+        console.log(feed.description.replace());
+        this.feeds.push(feed);
+      }); 
+    });
   }
-  
 }

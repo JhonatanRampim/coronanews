@@ -22,6 +22,17 @@ body, header{
     background-size: cover;
   }
 
+  /* :host ::ng-deep .card-body { 
+    display: inline-flex;
+    max-width: 100px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  } */
+  
+  :host ::ng-deep img { 
+    max-width: 100%;
+  }
+
   /* Color Theme Swatches in Hex */
 -the-concept-of-the-epidemic-of-the-virus-in-China-1-hex { color: #A6242F; }
 -the-concept-of-the-epidemic-of-the-virus-in-China-2-hex { color: #F2E8DF; }

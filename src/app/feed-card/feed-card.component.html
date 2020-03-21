@@ -1,6 +1,6 @@
 <mat-toolbar style="background-color: #A6242F; color:white;">
     <mat-toolbar-row>
-    <span>Araras e região corongada</span>
+    <span>Notícias de Araras e Região</span>
     <span class="example-spacer"></span>
     <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
     </mat-toolbar-row>
@@ -8,21 +8,12 @@
 
 <div class="container-fluid col-sm" style="float:left;background-color:#F2E8DF;">
     <div class="row">
-        <mat-card class="example-card" *ngFor="let feed of feeds">
-                <mat-card-header>
-                    <div mat-card-avatar style="background-image: url('https://noticiasdeararas.com.br/wp-content/uploads/2019/07/cropped-logo_512x512-32x32.jpg');" class="example-header-image">{{feed.image}}</div>
-                    <mat-card-title>{{feed.title}}</mat-card-title>
-                    <mat-card-subtitle> <a href="{{feed.guid}}">{{feed.guid}}</a></mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image src="" alt="">
-                <mat-card-content>
-                    {{feed.content}}
-                </mat-card-content>
-                <mat-card-actions>
-                    <button mat-button>LIKE</button>
-                    <button mat-button>SHARE</button>
-                </mat-card-actions>
-        </mat-card>
+        <div class="card example-card" style="width: 18rem;" *ngFor="let feed of feeds">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-header">{{feed.title}}</div>
+            <div [innerHTML]="feed.description" class="card-body"></div>
+            <div class="card-footer"><a href="{{feed.guid}}">{{feed.guid}}</a></div>
+          </div>
     </div>
 </div>
   
