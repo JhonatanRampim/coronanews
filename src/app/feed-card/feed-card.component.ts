@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FeedService } from '../services/feed.service';
 
-
+let result;
 @Component({
   selector: 'app-feed-card',
   templateUrl: './feed-card.component.html',
@@ -26,13 +26,15 @@ export class FeedCardComponent implements OnInit {
  private refreshFeed(url):any {
     this.feedService.getFeedContent(url)
       .subscribe(async res => {
-        this.filtro.map(filtro => {
-          this.feeds = res.items.filter(item => item.title.includes(filtro));
-          console.log(this.feeds)
-        });
         res.items.map(feed => {
-        this.feeds.push(feed);
-      }); 
+          result = res.items.filter(item => this.filtro.map(filtro => item.title.includes(filtro)));
+        }); 
+        console.log(result);
+        this.feeds.push(result);
+        console.log(this.feeds)
+      //   res.items.map(feed => {
+      //   this.feeds.push(feed);
+      // }); 
     });
   }
 }
