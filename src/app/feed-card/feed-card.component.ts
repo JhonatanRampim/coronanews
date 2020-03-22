@@ -10,9 +10,7 @@ import { FeedService } from '../services/feed.service';
 export class FeedCardComponent implements OnInit {
     feeds: any = [];
     news: String[] = [];
-    source: any[] = [];
     filtereditems: any[] = [];
-    filtro: String[] = ["Covid-19", "Corona Vírus", "Vírus", "Corona", "quarentena", "estado de emergência", "Coronavírus", "coronavírus"];
     constructor(
     private feedService: FeedService
   ) { }
@@ -22,7 +20,6 @@ export class FeedCardComponent implements OnInit {
     this.news.map(async url => {
      await this.refreshFeed(url);
     });
-    // console.log(this.feeds)
   }
 
  private refreshFeed(url):any {
@@ -33,20 +30,11 @@ export class FeedCardComponent implements OnInit {
              if(item.description.includes("Covid-19")||item.description.includes("Covid-19")|| item.description.includes("Corona Vírus") || item.description.includes("Vírus") || item.description.includes("Corona") ||item.description.includes( "quarentena") || item.description.includes("estado de emergência") || item.description.includes("Coronavírus") || item.description.includes("coronavírus") ){
                return item;
              }
-
-            
             });
-           console.log(this.filtereditems);
         }); 
         this.filtereditems.map(result => {
           this.feeds.push(result);
-          // console.log(result);
         });
-
-     
-      //   res.items.map(feed => {
-      //   this.feeds.push(feed);
-      // }); 
     });
   }
 }
