@@ -14,8 +14,7 @@ export class FeedService {
 
 
   getFeedContent(url: string): Observable<any> {
-    return this.http.get(this.rssToJsonServiceBaseUrl + url)
-    
+    return this.http.get<any>(this.rssToJsonServiceBaseUrl + url)
   }
 
 }

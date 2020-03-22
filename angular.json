@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "corona-news"
+  "defaultProject": "corona-news",
+  "cli": {
+    "analytics": "2c0f3ad8-a943-40c6-9876-98c420df36b4"
+  }
 }
