@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FeedCardComponent }   from './feed-card/feed-card.component';
-import { FeedService } from './services/feed.service';
+import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
   { path: '',
